@@ -13,6 +13,8 @@ CircuitJS 文档描述当前仓库的实际代码；StationEdit 文档属于建�
 
 两份正文覆盖从数据和绘图到交付的主要技术链路。电子器件的具体物理模型通过源码入口继续阅读；铁路制图和联锁领域规则需根据实际需求另行确定。
 
+正文按连续阅读组织，同一主题的实现细节集中在原有章节；设备族、表达式与规则、资源加载等扩展通过章节内的小节阅读，无需切换多份主题文件。
+
 ## 建议阅读顺序
 
 1. 阅读 CircuitJS 文档第 1 至 5 节，理解应用结构与图元抽象。
@@ -33,6 +35,7 @@ CircuitJS 文档描述当前仓库的实际代码；StationEdit 文档属于建�
 | --- | --- | --- |
 | 应用启动与职责组织 | [第 1 节](circuitjs-element-implementation.md#1-技术与启动结构) | [第 10 节](StationEdit/station-editor-element-design.md#10-建议的代码组织) |
 | 图元抽象与创建 | [第 2–5 节入口](circuitjs-element-implementation.md#2-图元统一基类-circuitelm) | [第 2–5 节入口](StationEdit/station-editor-element-design.md#2-统一的是能力不是形状) |
+| 设备族与新类型接入 | [第 5 节：元件族](circuitjs-element-implementation.md#元件族与扩展入口) | [第 13 节：设备族](StationEdit/station-editor-element-design.md#设备族与新增类型的接入) |
 | 坐标、高分屏、命中与吸附 | [第 6 节](circuitjs-element-implementation.md#6-坐标与鼠标交互) | [第 6 节](StationEdit/station-editor-element-design.md#6-几何命中与显示) |
 | 工具状态机与取消 | [第 11 节](circuitjs-element-implementation.md#11-鼠标交互与工具状态机) | [第 14 节](StationEdit/station-editor-element-design.md#14-鼠标交互与工具状态机) |
 | 渲染、重绘和失效标记 | [第 12 节](circuitjs-element-implementation.md#12-渲染调度失效标记与性能测量) | [第 15 节](StationEdit/station-editor-element-design.md#15-渲染管线图层与重绘调度) |
@@ -48,10 +51,12 @@ CircuitJS 文档描述当前仓库的实际代码；StationEdit 文档属于建�
 | 图片、SVG、打印及数据导出 | [第 20 节](circuitjs-element-implementation.md#20-图片svg-与打印导出) | [第 23 节](StationEdit/station-editor-element-design.md#23-导出图片svg打印与业务数据) |
 | 撤销、事务和修订控制 | [第 8 节](circuitjs-element-implementation.md#8-保存撤销与复制) | [第 8、24 节入口](StationEdit/station-editor-element-design.md#24-命令入口历史与修订控制) |
 | 计算主循环与数值求解 | [第 21 节](circuitjs-element-implementation.md#21-仿真主循环与数值计算) | [第 25 节：迁移范围](StationEdit/station-editor-element-design.md#25-运行状态事件时间线与回放) |
+| 表达式与自定义规则 | [第 21 节：解析与逻辑](circuitjs-element-implementation.md#表达式解析与自定义逻辑) | [第 29 节：受限规则](StationEdit/station-editor-element-design.md#受限表达式与自定义规则) |
 | 状态采样、时间线和回放 | [第 22 节](circuitjs-element-implementation.md#22-运行状态波形采样与观测) | [第 25 节](StationEdit/station-editor-element-design.md#25-运行状态事件时间线与回放) |
 | 性能、缓存和后台计算 | [第 12 节](circuitjs-element-implementation.md#12-渲染调度失效标记与性能测量) | [第 26 节](StationEdit/station-editor-element-design.md#26-性能空间索引与后台计算) |
 | 外部接口和平台适配 | [第 23 节](circuitjs-element-implementation.md#23-外部接口嵌入与-websocket-桥接) | [第 27 节](StationEdit/station-editor-element-design.md#27-外部接口与平台适配) |
 | 国际化、主题和触屏 | [第 24 节](circuitjs-element-implementation.md#24-国际化主题与触屏适配) | [第 28 节](StationEdit/station-editor-element-design.md#28-快捷键触屏主题与可访问性) |
+| 启动资源与示例加载 | [第 24 节：加载链路](circuitjs-element-implementation.md#语言示例和启动参数的加载) | [第 28 节：启动与竞态](StationEdit/station-editor-element-design.md#资源语言与示例加载) |
 | 恢复、诊断与错误处理 | [第 25 节](circuitjs-element-implementation.md#25-自动恢复错误定位与测试现状) | [第 29 节](StationEdit/station-editor-element-design.md#29-自动恢复诊断与可观测性) |
 | 验证与测试 | [第 25 节：实际状态](circuitjs-element-implementation.md#25-自动恢复错误定位与测试现状) | [第 30 节](StationEdit/station-editor-element-design.md#30-自动验证样例与测试分层) |
 | 构建、部署与桌面 | [第 26 节](circuitjs-element-implementation.md#26-构建静态部署与桌面文件桥接) | [第 31 节](StationEdit/station-editor-element-design.md#31-构建部署桌面与离线) |
